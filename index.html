@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
   <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="header">
+    <div class="container header__container">
+      <h1 class="header__title">Todo</h1>
+      <button aria-label="Change mode" class="btn btn--light btn--icon" id="toggle-mode">
+        <i class="icon icon--light-mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z" />
+          </svg>
+        </i>
+        <i class="icon icon--dark-mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+            <path fill="#FFF" fill-rule="evenodd"
+              d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z" />
+          </svg>
+        </i>
+      </button>
+    </div>
   </div>
+  <main class="main">
+    <div class="todo">
+      <div class="container">
+        <form class="todo-list" autocomplete="off">
+          <div class="todo-list__input-wrapper">
+            <input type="text" class="todo-list__input" id="todo-input" placeholder="Create a new todo..."
+              aria-label="Create a new todo">
+          </div>
+          <div class="todo-list__container">
+            <ul id="todo-list-items"></ul>
+          </div>
+          <div class="todo-list__footer">
+            <span class="todo-list__counter">* items left</span>
+            <div class="todo-list__filters">
+              <button type="button" class="btn btn--filter is-active" id="allTodos">All</button>
+              <button type="button" class="btn btn--filter" id="activeTodos">Active</button>
+              <button type="button" class="btn btn--filter" id="completedTodos">Completed</button>
+            </div>
+            <button type="button" class="btn" id="clearCompleted">Clear Completed</button>
+          </div>
+        </form>
+        <p class="todo__note">Drag and drop to reorder list</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/snymkmr">Sanyam</a>.
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"
+    integrity="sha512-5x7t0fTAVo9dpfbp3WtE2N6bfipUwk7siViWncdDoSz2KwOqVC1N9fDxEOzk0vTThOua/mglfF8NO7uVDLRC8Q=="
+    crossorigin="anonymous"></script>
+  <script src="./js/app.js"></script>
+  <script>
+    const sortable = Sortable.create(document.getElementById('todo-list-items'));
+  </script>
 </body>
+
 </html>
