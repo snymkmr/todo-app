@@ -43,11 +43,6 @@ const initialState = {
     },
     {
       id: '5',
-      name: 'Pick up groceries',
-      done: false,
-    },
-    {
-      id: '6',
       name: 'Clear Completed task',
       done: false,
     },
