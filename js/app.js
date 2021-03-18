@@ -34,12 +34,12 @@ const initialState = {
     {
       id: '3',
       name: '10 minutes meditation',
-      done: false,
+      done: true,
     },
     {
       id: '4',
       name: 'Read for 1 hour',
-      done: false,
+      done: true,
     },
     {
       id: '5',
