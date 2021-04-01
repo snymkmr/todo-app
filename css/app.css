@@ -446,6 +446,7 @@ body.light-mode .icon--light-mode {
 
 .footer {
   margin-top: 3rem;
+  padding-bottom: 50px;
 }
 
 .footer .attribution {
